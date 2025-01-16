@@ -1,3 +1,9 @@
+gnome-shell-extension-arc-menu (63.Policorp-2) stable; urgency=medium
+
+  * Add versão Policorp
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Thu, 16 Jan 2025 14:06:27 -0400
+
 gnome-shell-extension-arc-menu (63-2) unstable; urgency=medium
 
   * Remove extraneous dash from project homepage
