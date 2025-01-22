@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+# Forwarded: https://gitlab.com/arcmenu/ArcMenu/-/merge_requests/196
+execute_after_dh_fixperms:
+	find debian/gnome-shell-extension-arc-menu/usr/share -type f -exec chmod -x {} +
