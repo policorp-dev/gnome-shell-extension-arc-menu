@@ -1,3 +1,9 @@
+gnome-shell-extension-arc-menu (63.Policorp-3) stable; urgency=medium
+
+  * incrementado changelog
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Thu, 23 Jan 2025 16:27:49 -0300
+
 gnome-shell-extension-arc-menu (63.Policorp-2) stable; urgency=medium
 
   * Add versão Policorp
