@@ -1,0 +1,13 @@
+Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
++++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+@@ -568,7 +568,7 @@
+       <summary>File path of the custom icon for the menu button.</summary>
+     </key>
+     <key type="d" name="custom-menu-button-icon-size">
+-      <default>20</default>
++      <default>35</default>
+       <summary>Size of the menu buton icon.</summary>
+     </key>
+     <key type="i" name="button-padding">
