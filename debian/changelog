@@ -1,3 +1,15 @@
+gnome-shell-extension-arc-menu (66.Policorp-5) stable; urgency=medium
+
+  * Subindo versao para ser maior que o debian
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Tue, 11 Feb 2025 16:05:41 -0400
+
+gnome-shell-extension-arc-menu (63.Policorp-4) stable; urgency=medium
+
+  * Add icone Policorp
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Fri, 24 Jan 2025 14:54:01 -0300
+
 gnome-shell-extension-arc-menu (63.Policorp-3) stable; urgency=medium
 
   * incrementado changelog

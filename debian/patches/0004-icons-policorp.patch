@@ -1,0 +1,14 @@
+Index: gnome-shell-extension-arc-menu/menuWidgets.js
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/menuWidgets.js
++++ gnome-shell-extension-arc-menu/menuWidgets.js
+@@ -2900,7 +2900,8 @@ export class CategoryMenuItem extends Ba
+         this._updateIcon();
+ 
+         this._indicator = new St.Icon({
+-            icon_name: 'message-indicator-symbolic',
++            icon_name: 'policorp-indicator-symbolic',
++            //icon_name: 'message-indicator-symbolic',
+             style_class: 'arcmenu-indicator',
+             icon_size: INDICATOR_ICON_SIZE,
+             x_expand: true,
