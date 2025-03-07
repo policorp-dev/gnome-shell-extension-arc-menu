@@ -1,3 +1,9 @@
+gnome-shell-extension-arc-menu (66.Policorp-6) stable; urgency=medium
+
+  * Atualizado para gnome 48
+
+ -- Edson Juliano Drodeck <edson@policorp.com.br>  Fri, 07 Mar 2025 12:31:37 +0000
+
 gnome-shell-extension-arc-menu (66.Policorp-5) stable; urgency=medium
 
   * Subindo versao para ser maior que o debian
