@@ -2,26 +2,26 @@ Index: gnome-shell-extension-arc-menu/appMenu.js
 ===================================================================
 --- gnome-shell-extension-arc-menu.orig/appMenu.js
 +++ gnome-shell-extension-arc-menu/appMenu.js
-@@ -87,16 +87,46 @@ export const AppContextMenu = class ArcM
+@@ -87,16 +87,45 @@ export const AppContextMenu = class ArcM
          });
  
          this._createDesktopShortcutItem = this._createMenuItem(_('Create Desktop Shortcut'), 7, () => {
 -            const [exists, src, dst] = this.getDesktopShortcut();
 -            if (exists && src && dst) {
--                try {
-+           var DEFAULT_AND_UEXEC = 0o00764;
++	   var DEFAULT_AND_UEXEC = 0o00764;
 +	   const [exists, src, dst, dst2] = this.getDesktopShortcut();
 +           if (exists && src && dst && dst2) {
-+	     try {
+                 try {
                      dst.delete(null);
                  } catch (e) {
-                     log(`Failed to delete shortcut: ${e.message}`);
+                     console.log(`Failed to delete shortcut: ${e.message}`);
                  }
 -            } else if (src && dst) {
-+            } else if (src && dst && dst2) {
-                 try {
+-                try {
++	   } else if (src && dst && dst2) {
++		try {
                      src.copy(dst, Gio.FileCopyFlags.OVERWRITE, null, null);
-+	    	    let proc = new Gio.Subprocess({argv: ['gio', 'set', dst2, 'metadata::trusted', 'true']}); //Inicio validacao do arquivo
++		    let proc = new Gio.Subprocess({argv: ['gio', 'set', dst2, 'metadata::trusted', 'true']}); //Inicio validacao do arquivo
 +		    //let proc1 = new Gio.Subprocess({argv: ['chmod', '+x', dst2]}); //Inicio validacao do arquivo
 +        	    proc.init(null);
 +        	    //proc1.init(null);
@@ -49,11 +49,10 @@ Index: gnome-shell-extension-arc-menu/appMenu.js
 +                    						log(`Failed to allow launching: ${e.message}`);
 +                					}
 +            			    });//Termino - validacao de arquivo
-+
                  } catch (e) {
-                     log(`Failed to copy to desktop: ${e.message}`);
+                     console.log(`Failed to copy to desktop: ${e.message}`);
                  }
-@@ -215,9 +245,17 @@ export const AppContextMenu = class ArcM
+@@ -219,9 +248,18 @@ export const AppContextMenu = class ArcM
  
          const fileDestination = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
          const src = Gio.File.new_for_path(this._app.get_app_info().get_filename());
@@ -70,6 +69,7 @@ Index: gnome-shell-extension-arc-menu/appMenu.js
          const exists = dst.query_exists(null);
 -        return [exists, src, dst];
 +        return [exists, src, dst, dst2];
++
      }
  
      _updateDesktopShortcutItem() {

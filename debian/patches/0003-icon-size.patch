@@ -2,7 +2,7 @@ Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu
 ===================================================================
 --- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
 +++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
-@@ -552,7 +552,7 @@
+@@ -570,7 +570,7 @@
        <summary>Text of the menu button.</summary>
      </key>
      <key name="menu-button-icon" enum="org.gnome.shell.extensions.arcmenu.menu-button-icon">
@@ -11,7 +11,7 @@ Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu
        <summary>Icon type for the menu button.</summary>
      </key>
      <key name="arc-menu-icon" type="i">
-@@ -564,11 +564,11 @@
+@@ -582,11 +582,11 @@
        <summary>Distro icon integer value for the menu button.</summary>
      </key>
      <key type="s" name="custom-menu-button-icon">
