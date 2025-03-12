@@ -1,10 +1,16 @@
-gnome-shell-extension-arc-menu (66.Policorp-6) stable; urgency=medium
+gnome-shell-extension-arc-menu (65.Policorp-7) stable; urgency=medium
 
-  * Atualizado para gnome 48
+  * desabilitando o update-notifier e add false para pinned-apps
 
- -- Edson Juliano Drodeck <edson@policorp.com.br>  Fri, 07 Mar 2025 12:31:37 +0000
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Wed, 12 Mar 2025 10:33:06 -0400
 
-gnome-shell-extension-arc-menu (66.Policorp-5) stable; urgency=medium
+gnome-shell-extension-arc-menu (65.Policorp-6) stable; urgency=medium
+
+  * Add patch da versão anterior
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Tue, 11 Mar 2025 12:03:26 -0300
+
+gnome-shell-extension-arc-menu (65.Policorp-5) stable; urgency=medium
 
   * Subindo versao para ser maior que o debian
 
