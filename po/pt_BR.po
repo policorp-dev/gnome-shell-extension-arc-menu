@@ -22,10 +22,207 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Gtranslator 40.0\n"
 
+#: settings/MenuButtonPage.js:626
+msgid "Search..."
+msgstr "Procurar..."
+
+#: settings/MenuButtonPage.js:525 
+msgid "Select an Image File"
+msgstr "Selecione um arquivo de imagem"
+
+#: settings/MenuButtonPage.js:454
+msgid "Legal Disclaimer"
+msgstr "Disclaimer Legal"
+
+#: settings/MenuButtonPage.js:552
+msgid "Browse Icons..."
+msgstr "Buscar Ícone..."
+
+#: settings/MenuButtonPage.js:520
+msgid "Browse Files..."
+msgstr "Buscar Arquivo..."
+
+#:  settings/DonatePage.js:30 
+msgid "Donate via Buy Me a Coffee"
+msgstr "Contribuir via Buy Me a Coffee"
+
+#: settings/GeneralPage.js:367
+msgid "Press Esc to cancel or Backspace to disable the keyboard shortcut."
+msgstr "Pressione Esc para cancelar ou Backspace para desabilitar o atalho de teclado."
+
+#: settings/GeneralPage.js:337
+msgid "ArcMenu Hotkey"
+msgstr "Tecla de atalho do ArcMenu"
+
+#: settings/GeneralPage.js:337
+msgid "Standalone Runner Hotkey"
+msgstr "Atalho autônomo 'Runner'"
+
+#: settings/GeneralPage.js:337 
+msgid "Enter a new shortcut to change <b>%s</b>"
+msgstr "Insira um novo atalho para alterar <b>%s</b>"
+
+#: settings/DonatePage.js:12 
+msgid "Donate"
+msgstr "Doação"
+
+#: settings/Menu/FineTunePage.js:134 
+msgid "Allow application labels to span multiple lines on grid style layouts"
+msgstr "Permitir que rótulos de aplicativos abranjam várias linhas em layouts de estilo de grade"
+
+#: settings/Menu/FineTunePage.js:104
+msgid "Group Apps Alphabetically on Grid Views"
+msgstr "Agrupar aplicativos em ordem alfabética em visualizações de grade"
+
+#: settings/Menu/FineTunePage.js:90
+#: settings/Menu/FineTunePage.js:105
+msgid "For All Apps sections"
+msgstr "Para todas as seções de aplicativos"
+
+#: settings/Menu/FineTunePage.js:89
+msgid "Group Apps Alphabetically on List Views"
+msgstr "Agrupar aplicativos em ordem alfabética em exibições de lista"
+
+#: settings/Menu/FineTunePage.js:33
+msgid "Show Category Sub Menus"
+msgstr "Mostrar submenus de categoria"
+
+#: settings/Menu/VisualSettings.js:120
+msgid "Monitor Centered"
+msgstr "Centrado no monitor"
+
+#: settings/Menu/VisualSettings.js:119 
+msgid "Right Centered"
+msgstr "Centralizado à direita"
+
+#: settings/Menu/VisualSettings.js:118
+msgid "Left Centered"
+msgstr "Centrado à Esquerda"
+
+#: settings/Menu/VisualSettings.js:117 
+msgid "Bottom Right"
+msgstr "Inferior direito"
+
+#: settings/Menu/VisualSettings.js:116 
+msgid "Bottom Left"
+msgstr "Inferior Esquerdo"
+
+#: settings/Menu/VisualSettings.js:114 
+msgid "Top Right"
+msgstr "Superior direito"
+
+#: settings/Menu/VisualSettings.js:113
+msgid "Top Left"
+msgstr "Superior esquerdo"
+
+#: settings/MenuButtonPage.js:248
+msgid "Styling"
+msgstr "Estilo"
+
+#: settings/MenuButtonPage.js:213
+msgid "None"
+msgstr "Nenhum"
+
+#: settings/MenuButtonPage.js:212 
+msgid "Context Menu"
+msgstr "Menu de contexto"
+
+#:settings/MenuButtonPage.js:236 
+msgid "Middle Click"
+msgstr "Clique do Meio"
+
+#: settings/MenuButtonPage.js:226
+msgid "Right Click"
+msgstr "Clique Direito"
+
+#:settings/MenuButtonPage.js:216
+msgid "Left Click"
+msgstr "Clique Esquerdo"
+
+#: settings/MenuButtonPage.js:206
+msgid "Click Options"
+msgstr "Opções de Clique"
+
+#: settings/MenuButtonPage.js:170
+msgid "Choose a New Icon"
+msgstr "Escolha um novo ícone"
+
+#: settings/AboutPage.js:75
+msgid "%s - Release Notes"
+msgstr "%s - Notas de lançamento"
+
+#: settings/DonatePage.js:42
+msgid "A huge thank you to everyone who has supported %s! Your support helps keep %s going. It is truly appreciated!"
+msgstr "Um grande obrigado a todos que apoiaram o %s! Seu apoio ajuda a manter o %s funcionando. É realmente apreciado!"
+
+#: settings/DonatePage.js:23
+msgid "Thank you for using %s! If you enjoy it and would like to help support its continued development, please consider making a donation."
+msgstr "Obrigado por usar o %s! Se você gosta e gostaria de ajudar a apoiar seu desenvolvimento contínuo, considere fazer uma doação."
+
+#: settings/DonatePage.js:22
+msgid "Help Support %s"
+msgstr "Ajude a apoiar o %s"
+
+#: settings/AboutPage.js:124
+msgid "Show a notification when %s receives an update."
+msgstr "Mostrar uma notificação quando %s receber uma atualização."
+
+#: settings/AboutPage.js:123
+msgid "Message Tray Update Notification"
+msgstr "Notificação de atualização da bandeja de mensagens"
+
+#: settings/AboutPage.js:292
+msgid "Artwork by"
+msgstr "Arte de"
+
+#: settings/AboutPage.js:288
+msgid "Translators"
+msgstr "Tradutores"
+
+#: settings/AboutPage.js:286
+msgid "Contributors"
+msgstr "Contribuidores"
+
+#: settings/AboutPage.js:283
+msgid "Contributions by"
+msgstr "Contribuições de"
+
+#: settings/AboutPage.js:265
+msgid "History"
+msgstr "História"
+
+#: settings/AboutPage.js:254
+msgid "Brought to you by"
+msgstr "Apresentado a você por"
+
+#: settings/AboutPage.js:250
+msgid "Credits"
+msgstr "Créditos"
+
+#: settings/AboutPage.js:188
+msgid "%s Settings"
+msgstr "Configurações do %s"
+
+#: settings/AboutPage.js:178
+msgid "Report an Issue"
+msgstr "Informar um problema"
+
+#: settings/AboutPage.js:175
+msgid "%s on GitLab"
+msgstr "%s no GitLab"
+
+#: settings/AboutPage.js:78
+msgid "%s Version"
+msgstr "%s Versão"
+
+#: settings/AboutPage.js:78
+msgid "What's New"
+msgstr "Novidades"
+
 #: settings/Menu/LayoutTweaksPage.js:512 settings/MenuButtonPage.js:104
 #, javascript-format
 msgid "%d Default Theme Value"
-msgstr "%d valor de tema default"
+msgstr "%d valor de tema padrão"
 
 #: settings/Menu/LayoutsPage.js:99 settings/SettingsUtils.js:12
 #, javascript-format
@@ -222,10 +419,6 @@ msgstr "ArcMenu"
 msgid "ArcMenu GitLab"
 msgstr "Página do ArcMenu no GitLab"
 
-#: settings/GeneralPage.js:131
-msgid "ArcMenu Hotkey"
-msgstr "Tecla de atalho do ArcMenu"
-
 #: settings/MenuButtonPage.js:374 settings/MenuButtonPage.js:379
 msgid "ArcMenu Icons"
 msgstr "Ícones do ArcMenu"
@@ -399,10 +592,6 @@ msgstr "Configurar 'Runner'"
 #: appMenu.js:65 appMenu.js:189
 msgid "Create Desktop Shortcut"
 msgstr "Criar atalho na área de trabalho"
-
-#: settings/AboutPage.js:185
-msgid "Credits"
-msgstr ""
 
 #: settings/GeneralPage.js:294
 msgid "Ctrl"
@@ -1330,7 +1519,7 @@ msgstr "Quadrado"
 
 #: settings/GeneralPage.js:132
 msgid "Standalone Runner Menu"
-msgstr "Menu 'runner' standalone"
+msgstr "Menu 'runner' autônomo"
 
 #: settings/GeneralPage.js:298
 msgid "Super"
@@ -1391,7 +1580,7 @@ msgstr "Tradicional"
 
 #: settings/Menu/VisualSettings.js:56 settings/Menu/VisualSettings.js:77
 msgid "Traditional Layouts"
-msgstr "Layouts tradicionaiss"
+msgstr "Layouts tradicionais"
 
 #: constants.js:427
 msgid "Tweaks"
@@ -1429,7 +1618,7 @@ msgstr "O que deve aparecer no menu de contexto?"
 
 #: settings/MenuPage.js:84
 msgid "What should show on the menu?"
-msgstr "O que deve aparecer no meny?"
+msgstr "O que deve aparecer no menu?"
 
 #: constants.js:388
 msgid "Whisker"
@@ -1446,7 +1635,7 @@ msgstr "Largura"
 
 #: settings/Menu/VisualSettings.js:97
 msgid "Width Offset"
-msgstr "Offset da largura"
+msgstr "Deslocamento da largura"
 
 #: settings/AboutPage.js:106
 msgid "Windowing System"
@@ -1523,8 +1712,9 @@ msgstr "tognee"
 #~ msgid "App Indicator Label Color"
 #~ msgstr "Cor do rótulo do indicador de aplicativo"
 
-#~ msgid "Appearance"
-#~ msgstr "Aparência"
+#: settings/MenuButtonPage.js:54
+msgid "Appearance"
+msgstr "Aparência"
 
 #~ msgid "Apply changes and set new hot corner action"
 #~ msgstr "Aplica alterações e define uma nova ação do canto ativo"
@@ -1676,9 +1866,6 @@ msgstr "tognee"
 #~ msgid "Color"
 #~ msgstr "Cor"
 
-#~ msgid "Contributors"
-#~ msgstr "Contribuidores"
-
 #~ msgid "Corner Radius"
 #~ msgstr "Raio dos cantos"
 
@@ -1786,8 +1973,9 @@ msgstr "tognee"
 #~ msgid "Disable the border on the searchbox"
 #~ msgstr "Desabilita a borda na caixa de pesquisa"
 
-#~ msgid "Disabled"
-#~ msgstr "Desabilitado"
+#: settings/GeneralPage.js:226
+msgid "Disabled"
+msgstr "Desabilitado"
 
 #~ msgid "Display ArcMenu On"
 #~ msgstr "Exibir o ArcMenu no"
@@ -1910,8 +2098,9 @@ msgstr "tognee"
 #~ msgid "Hotkey Activation"
 #~ msgstr "Ativação da tecla de atalho"
 
-#~ msgid "Hotkey Options"
-#~ msgstr "Opções da tecla de atalho"
+#: settings/GeneralPage.js:213
+msgid "Hotkey Options"
+msgstr "Opções da tecla de atalho"
 
 #~ msgid "Hover Background Color"
 #~ msgstr "Cor de fundo ao passar o mouse"
@@ -2059,9 +2248,6 @@ msgstr "tognee"
 
 #~ msgid "New Window"
 #~ msgstr "Nova janela"
-
-#~ msgid "None"
-#~ msgstr "Nenhuma"
 
 #~ msgid "OS"
 #~ msgstr "SO"
@@ -2295,9 +2481,6 @@ msgstr "tognee"
 #~ msgstr ""
 #~ "Layouts tradicionais usam um estilo familiar e possuem uma experiência de "
 #~ "usuário tradicional."
-
-#~ msgid "Translators"
-#~ msgstr "Tradutores"
 
 #~ msgid "Trash"
 #~ msgstr "Lixeira"
