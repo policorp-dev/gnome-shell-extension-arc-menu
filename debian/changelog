@@ -1,3 +1,9 @@
+gnome-shell-extension-arc-menu (65.Policorp-9) stable; urgency=medium
+
+  * alterado icone de novo aplicativo
+
+ -- Edson Juliano Drosdeck <edson@policorp.com.br>  Wed, 13 Aug 2025 17:36:58 +0000
+
 gnome-shell-extension-arc-menu (65.Policorp-8) stable; urgency=medium
 
   * Add translations
