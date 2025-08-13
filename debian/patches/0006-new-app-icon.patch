@@ -1,0 +1,13 @@
+Index: gnome-shell-extension-arc-menu/menuWidgets.js
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/menuWidgets.js
++++ gnome-shell-extension-arc-menu/menuWidgets.js
+@@ -2959,7 +2959,7 @@ export class CategoryMenuItem extends Ba
+         this._updateIcon();
+ 
+         this._indicator = new St.Icon({
+-            icon_name: 'starred-symbolic',
++            icon_name: 'flag-green',
+             style_class: 'arcmenu-indicator',
+             icon_size: INDICATOR_ICON_SIZE,
+             x_expand: true,
