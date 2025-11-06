@@ -1,0 +1,13 @@
+Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
++++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+@@ -562,7 +562,7 @@
+       <summary>Force placement of ArcMenu on GNOME top panel.</summary>
+     </key>
+     <key type="b" name="hide-overview-on-startup">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Hide overview on startup</summary>
+     </key>
+     <key type="s" name="custom-menu-button-text">
