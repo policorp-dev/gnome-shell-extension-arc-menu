@@ -1,0 +1,22 @@
+Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
++++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+@@ -140,7 +140,7 @@
+       <summary>The project version of when an update notification was shown</summary>
+     </key>
+     <key type="b" name="update-notifier-enabled">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Enable/Disable the update notifications</summary>
+     </key>
+     <key type="i" name="menu-position-alignment">
+@@ -598,7 +598,7 @@
+       <summary>Menu button position offset for main panel</summary>
+     </key>
+     <key name="extra-categories" type="a(ib)">
+-      <default>[(3, true), (2, true), (0, false), (1, false), (4, false)]</default>
++      <default>[(3, false), (2, true), (0, false), (1, true), (4, false)]</default>
+       <summary>Array of extra categories. See Constants.js - Categories</summary>
+     </key>
+     <key name="arcmenu-extra-categories-links" type="a(ib)">

@@ -1,0 +1,13 @@
+Index: gnome-shell-extension-arc-menu/updateNotifier.js
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/updateNotifier.js
++++ gnome-shell-extension-arc-menu/updateNotifier.js
+@@ -55,6 +55,8 @@ export class UpdateNotification {
+ 
+     _showNotification() {
+         /* TRANSLATORS: This will display as "ProjectName v21 Released!" as an example.*/
++	return;// desabilita a noti
++
+         const title = _('%s v%s Released!').format(PROJECT_NAME, this._version);
+         const body = _('Thank you for using %s! If you enjoy it and would like to help support its continued development, please consider making a donation.').format(PROJECT_NAME);
+         const gicon = Gio.icon_new_for_string(this._iconPath);

@@ -1,0 +1,31 @@
+Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
++++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+@@ -134,7 +134,7 @@
+       <summary>Menu position alignment</summary>
+     </key>
+     <key name="menu-layout" enum="org.gnome.shell.extensions.arcmenu.menulayout">
+-      <default>'Default'</default>
++      <default>'Enterprise'</default>
+       <summary>menu layout</summary>
+     </key>
+     <key type="b" name="override-menu-theme">
+@@ -276,7 +276,7 @@
+       <summary>Enable Clocks Widget Unity layout</summary>
+     </key>
+     <key enum="org.gnome.shell.extensions.arcmenu.category-icon-type" name="category-icon-type">
+-      <default>'Symbolic'</default>
++      <default>'Full_Color'</default>
+       <summary>Category icon type. Full_Color or Symbolic</summary>
+     </key>
+     <key enum="org.gnome.shell.extensions.arcmenu.category-icon-type" name="shortcut-icon-type">
+@@ -320,7 +320,7 @@
+       <summary>Show hidden recent files</summary>
+     </key>
+     <key type="b" name="activate-on-hover">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Activate Categories on Hover</summary>
+     </key>
+     <key type="b" name="disable-recently-installed-apps">

@@ -1,0 +1,75 @@
+Index: gnome-shell-extension-arc-menu/appMenu.js
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/appMenu.js
++++ gnome-shell-extension-arc-menu/appMenu.js
+@@ -87,16 +87,45 @@ export const AppContextMenu = class ArcM
+         });
+ 
+         this._createDesktopShortcutItem = this._createMenuItem(_('Create Desktop Shortcut'), 7, () => {
+-            const [exists, src, dst] = this.getDesktopShortcut();
+-            if (exists && src && dst) {
++	   var DEFAULT_AND_UEXEC = 0o00764;
++	   const [exists, src, dst, dst2] = this.getDesktopShortcut();
++           if (exists && src && dst && dst2) {
+                 try {
+                     dst.delete(null);
+                 } catch (e) {
+                     console.log(`Failed to delete shortcut: ${e.message}`);
+                 }
+-            } else if (src && dst) {
+-                try {
++	   } else if (src && dst && dst2) {
++		try {
+                     src.copy(dst, Gio.FileCopyFlags.OVERWRITE, null, null);
++		    let proc = new Gio.Subprocess({argv: ['gio', 'set', dst2, 'metadata::trusted', 'true']}); //Inicio validacao do arquivo
++		    //let proc1 = new Gio.Subprocess({argv: ['chmod', '+x', dst2]}); //Inicio validacao do arquivo
++        	    proc.init(null);
++        	    //proc1.init(null);
++		    proc.wait_check_async(null,
++            			(source, result) => {
++                				try {
++                    					source.wait_check_finish(result);
++				    			this._shortcutFile = Gio.File.new_for_path(dst2); //Inicio-permitir .desktop executar
++				   			let new_info = new Gio.FileInfo();
++				    			new_info.set_attribute_uint32(Gio.FILE_ATTRIBUTE_UNIX_MODE, DEFAULT_AND_UEXEC);
++				    			this._shortcutFile.set_attributes_async(
++								new_info,
++					    			Gio.FileQueryInfoFlags.NONE,
++					    			GLib.PRIORITY_LOW,
++					    			null,
++					    			(source, result) => {
++					    				try{
++						    				source.set_attributes_finish (result);
++						    				log("Shortcut created successfully");
++					    				} catch{
++					    					log("Failed to set unix mode");
++					    					}
++					    				});//Termino - permitir .desktop executar
++							} catch(e) {
++                    						log(`Failed to allow launching: ${e.message}`);
++                					}
++            			    });//Termino - validacao de arquivo
+                 } catch (e) {
+                     console.log(`Failed to copy to desktop: ${e.message}`);
+                 }
+@@ -219,9 +248,18 @@ export const AppContextMenu = class ArcM
+ 
+         const fileDestination = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DESKTOP);
+         const src = Gio.File.new_for_path(this._app.get_app_info().get_filename());
+-        const dst = Gio.File.new_for_path(GLib.build_filenamev([fileDestination, src.get_basename()]));
++        let dst = Gio.File.new_for_path(GLib.build_filenamev([fileDestination, src.get_basename()]));
++        let dst2 = GLib.build_filenamev([fileDestination, src.get_basename()]);
++	if(GLib.getenv("LANG") == "pt_BR.UTF-8"){
++		dst = Gio.File.new_for_path(GLib.build_filenamev(["/home/"+ GLib.get_user_name()+"/Área\ de\ trabalho/", src.get_basename()]));
++		dst2 = "/home/"+ GLib.get_user_name()+"/Área\ de\ trabalho/" + src.get_basename();
++	} else if(GLib.getenv("LANG") == "en_US.UTF-8"){
++		dst = Gio.File.new_for_path(GLib.build_filenamev(["/home/"+ GLib.get_user_name()+"/Desktop/", src.get_basename()]));
++		dst2 = "/home/"+ GLib.get_user_name()+"/Desktop/" + src.get_basename();
++	}
+         const exists = dst.query_exists(null);
+-        return [exists, src, dst];
++        return [exists, src, dst, dst2];
++
+     }
+ 
+     _updateDesktopShortcutItem() {

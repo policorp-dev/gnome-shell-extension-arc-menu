@@ -1,0 +1,23 @@
+Source: gnome-shell-extension-arc-menu
+Section: gnome
+Priority: optional
+Maintainer: Edson Juliano Drosdeck <edson@policorp.com.br>
+Uploaders: Jonathan <jcc@debian.org>
+Build-Depends: debhelper-compat (= 13), gettext, libgettextpo-dev,
+               libglib2.0-bin
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://gitlab.com/arcmenu/ArcMenu
+
+Package: gnome-shell-extension-arc-menu
+Architecture: all
+Depends: ${misc:Depends}, gnome-shell (>= 45~), gnome-shell (<< 49~)
+Recommends: gir1.2-gmenu-3.0
+Description: shell extension designed to provide a panel menu
+ GNOME Arc Menu is a GNOME shell extension designed to replace the standard
+ menu found in GNOME 3 this application menu extension has some added benefits
+ over the standard menu found in GNOME 3, these include the long awaited
+ search functionality as well as quick access to files on your system and
+ also the current logged in user along with quick access to the software
+ centre and system settings and other features which can be accessed from the
+ settings menu.

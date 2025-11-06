@@ -1,0 +1,4 @@
+*json *js menulayouts po schemas searchProviders settings usr/share/gnome-shell/extensions/arcmenu@arcmenu.com
+schemas/org.gnome.shell.extensions.arcmenu.gschema.xml usr/share/glib-2/schemas
+icons-policorp/* /usr/share/pixmaps/
+

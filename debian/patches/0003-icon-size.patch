@@ -1,0 +1,27 @@
+Index: gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+===================================================================
+--- gnome-shell-extension-arc-menu.orig/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
++++ gnome-shell-extension-arc-menu/schemas/org.gnome.shell.extensions.arcmenu.gschema.xml
+@@ -570,7 +570,7 @@
+       <summary>Text of the menu button.</summary>
+     </key>
+     <key name="menu-button-icon" enum="org.gnome.shell.extensions.arcmenu.menu-button-icon">
+-      <default>'Menu_Icon'</default>
++      <default>'Custom_Icon'</default>
+       <summary>Icon type for the menu button.</summary>
+     </key>
+     <key name="arc-menu-icon" type="i">
+@@ -582,11 +582,11 @@
+       <summary>Distro icon integer value for the menu button.</summary>
+     </key>
+     <key type="s" name="custom-menu-button-icon">
+-      <default>''</default>
++      <default>'/usr/share/gnome-shell/extensions/arcmenu@arcmenu.com/icons/arcmenu-logo-symbolic.svg'</default>
+       <summary>File path of the custom icon for the menu button.</summary>
+     </key>
+     <key type="d" name="custom-menu-button-icon-size">
+-      <default>20</default>
++      <default>35</default>
+       <summary>Size of the menu buton icon.</summary>
+     </key>
+     <key type="i" name="button-padding">

@@ -1,0 +1,199 @@
+gnome-shell-extension-arc-menu (65.Policorp-9) stable; urgency=medium
+
+  * alterado icone de novo aplicativo
+
+ -- Edson Juliano Drosdeck <edson@policorp.com.br>  Wed, 13 Aug 2025 17:36:58 +0000
+
+gnome-shell-extension-arc-menu (65.Policorp-8) stable; urgency=medium
+
+  * Add translations
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Wed, 19 Mar 2025 13:07:04 -0400
+
+gnome-shell-extension-arc-menu (65.Policorp-7) stable; urgency=medium
+
+  * desabilitando o update-notifier e add false para pinned-apps
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Wed, 12 Mar 2025 10:33:06 -0400
+
+gnome-shell-extension-arc-menu (65.Policorp-6) stable; urgency=medium
+
+  * Add patch da versão anterior
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Tue, 11 Mar 2025 12:03:26 -0300
+
+gnome-shell-extension-arc-menu (65.Policorp-5) stable; urgency=medium
+
+  * Subindo versao para ser maior que o debian
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Tue, 11 Feb 2025 16:05:41 -0400
+
+gnome-shell-extension-arc-menu (63.Policorp-4) stable; urgency=medium
+
+  * Add icone Policorp
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Fri, 24 Jan 2025 14:54:01 -0300
+
+gnome-shell-extension-arc-menu (63.Policorp-3) stable; urgency=medium
+
+  * incrementado changelog
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Thu, 23 Jan 2025 16:27:49 -0300
+
+gnome-shell-extension-arc-menu (63.Policorp-2) stable; urgency=medium
+
+  * Add versão Policorp
+
+ -- Lucas Salles <lucas.salles@policorp.com.br>  Thu, 16 Jan 2025 14:06:27 -0400
+
+gnome-shell-extension-arc-menu (63-2) unstable; urgency=medium
+
+  * Remove extraneous dash from project homepage
+  * Remove built langauge files on dh_clean to allow re-building of
+    package (Closes: #1044947)
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 13 Nov 2024 09:21:19 +0200
+
+gnome-shell-extension-arc-menu (63-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update project homepage
+  * Install settings directory (Closes: #1086749)
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 07 Nov 2024 15:18:44 +0200
+
+gnome-shell-extension-arc-menu (61-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #1079238)
+  * Update depends to include gnome-shell version 47
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 07 Oct 2024 12:03:56 +0200
+
+gnome-shell-extension-arc-menu (58-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 15 Aug 2024 17:37:27 +0200
+
+gnome-shell-extension-arc-menu (57-1) unstable; urgency=medium
+
+  * Team upload
+  * Release to unstable (Closes: #1052088)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Mon, 15 Jul 2024 08:32:39 -0400
+
+gnome-shell-extension-arc-menu (57-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+  * Fix package short description (Closes: #1065502)
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 19 Jun 2024 11:17:17 +0200
+
+gnome-shell-extension-arc-menu (56-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.7.0
+  * Update dependencies to allow for gnome-shell version 46 
+  * Update debian/watch file for new version of GitLab
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 24 Apr 2024 11:16:10 +0200
+
+gnome-shell-extension-arc-menu (55-1) unstable; urgency=medium
+
+  * New upstream release 
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 04 Mar 2024 19:44:08 +0200
+
+gnome-shell-extension-arc-menu (52-1~exp1) experimental; urgency=medium
+
+  * Experimental upload (GNOME 45 is not yet in unstable)
+  * Set gnome-shell dependency to 45
+  * Cut some fields in debian/control to 80 characters width
+  * Remove debian/patches (no longer needed)
+  * Remove media from debian/install (no longer provided)
+    And remove associated permission items from debian/rules
+
+ -- Jonathan Carter <jcc@debian.org>  Sun, 26 Nov 2023 20:19:20 +0200
+
+gnome-shell-extension-arc-menu (49+forkv29-4) unstable; urgency=medium
+
+  * Add support for gnome-shell version 44
+  * Update standards version to 4.6.2
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 29 Aug 2023 13:21:26 +0200
+
+gnome-shell-extension-arc-menu (49+forkv29-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 27 Sep 2022 19:16:09 -0400
+
+gnome-shell-extension-arc-menu (49+forkv29-2) experimental; urgency=medium
+
+  * Team upload
+  * Add patches for GNOME Shell 43 compatibility (Closes: #1018189)
+  * debian/control: Bump minimum & maximum gnome-shell to 43
+
+ -- Jesús Soto <jesus.soto@canonical.com>  Mon, 12 Sep 2022 08:38:00 -0400
+
+gnome-shell-extension-arc-menu (49+forkv29-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #1008536)
+  * Bump required gnome-shell version to 42
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 30 Mar 2022 11:52:48 +0200
+
+gnome-shell-extension-arc-menu (49+forkv20-1) unstable; urgency=medium
+
+  * New upstream release
+  * Improve debian/watch
+  * Add searchProviders to debian/install
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 21 Jan 2022 11:59:18 +0200
+
+gnome-shell-extension-arc-menu (49+forkv18-1) unstable; urgency=medium
+
+  * Update standards version to 4.6.0
+  * New upstream fork (Closes: #993182, #996045)
+    - Update debian/install with new upstream name
+  * Depend on minimum gnome-shell version 40
+  * Update copyright years
+  * Install schema in correct directory (Closes: #983463)
+  * Update chmod paths in debian/rules
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 06 Sep 2021 10:44:14 +0200
+
+gnome-shell-extension-arc-menu (49-1) unstable; urgency=medium
+
+  [ Edward Betts ]
+  * d/{control,copyright,watch}: Update upstream URL
+
+  [ Jonathan Carter ]
+  * New upstream release
+  * Update debhelper-compat to level 13
+  * Remove *.css from debian/install (no longed needed)
+  * Override executable permissions in debian/rules
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 22 Oct 2020 12:59:28 +0200
+
+gnome-shell-extension-arc-menu (45-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #956168)
+  * Update standards version to 4.5.0
+  * Declare Rules-Requires-Root: no
+  * Update required gnome-shell version to 3.36 or higher
+  * Update copyright years
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 17 Apr 2020 21:55:36 +0200
+
+gnome-shell-extension-arc-menu (38.3-dev-2) unstable; urgency=medium
+
+  * Initial source-only upload
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 10 Jan 2020 19:13:17 +0200
+
+gnome-shell-extension-arc-menu (38.3-dev-1) unstable; urgency=medium
+
+  * Initial release (Closes: #942310)
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 12 Nov 2019 11:18:01 +0000
