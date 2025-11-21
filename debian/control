@@ -8,6 +8,7 @@ Build-Depends: debhelper-compat (= 13), gettext, libgettextpo-dev,
 Standards-Version: 4.7.0
 Rules-Requires-Root: no
 Homepage: https://gitlab.com/arcmenu/ArcMenu
+Vcs-Git: https://github.com/policorp-dev/gnome-shell-extension-arc-menu.git
 
 Package: gnome-shell-extension-arc-menu
 Architecture: all
