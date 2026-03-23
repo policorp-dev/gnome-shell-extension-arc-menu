@@ -1,3 +1,9 @@
+gnome-shell-extension-arc-menu (65.Policorp-10) stable; urgency=medium
+
+  * Add patch 0008-malcontent-support.patch
+
+ -- Edson Juliano Drosdeck <edson@policorp.com.br>  Mon, 23 Mar 2026 10:11:01 -0400
+
 gnome-shell-extension-arc-menu (65.Policorp-9) stable; urgency=medium
 
   * alterado icone de novo aplicativo
