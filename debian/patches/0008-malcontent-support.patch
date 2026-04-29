@@ -1,0 +1,124 @@
+--- gnome-shell-extension-arc-menu.orig/appMenu.js	2026-03-20 10:04:38.847848670 -0400
++++ gnome-shell-extension-arc-menu/appMenu.js	2026-03-20 10:05:10.575045377 -0400
+@@ -7,6 +7,7 @@
+ 
+ import {AppMenu} from 'resource:///org/gnome/shell/ui/appMenu.js';
+ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
++import * as ParentalControlsManager from 'resource:///org/gnome/shell/misc/parentalControlsManager.js';
+ import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
+ 
+ import {ArcMenuManager} from './arcmenuManager.js';
+@@ -35,6 +36,8 @@
+ 
+         this._menuLayout = menuLayout;
+         this._menuButton = this._menuLayout.menuButton;
++        // Inicializa o ParentalControlsManager para evitar erros de referência na destruição
++        this._parentalControlsManager = ParentalControlsManager.getDefault();
+ 
+         this._pinnedAppData = this.sourceActor.pinnedAppData;
+ 
+--- gnome-shell-extension-arc-menu.orig/menulayouts/baseMenuLayout.js	2026-03-20 10:04:38.843848784 -0400
++++ gnome-shell-extension-arc-menu/menulayouts/baseMenuLayout.js	2026-03-20 10:05:00.439282062 -0400
+@@ -6,6 +6,7 @@
+ import Shell from 'gi://Shell';
+ import St from 'gi://St';
+ 
++import * as ParentalControlsManager from 'resource:///org/gnome/shell/misc/parentalControlsManager.js';
+ import * as AppFavorites from 'resource:///org/gnome/shell/ui/appFavorites.js';
+ 
+ import {ArcMenuManager} from '../arcmenuManager.js';
+@@ -109,6 +110,8 @@
+         this._disableFadeEffect = ArcMenuManager.settings.get_boolean('disable-scrollview-fade-effect');
+         this.iconTheme = new St.IconTheme();
+         this.appSys = Shell.AppSystem.get_default();
++        // Gerenciador global de controle parental para todos os layouts
++        this._parentalControlsManager = ParentalControlsManager.getDefault();
+         this._tree = new GMenu.Tree({menu_basename: 'applications.menu'});
+ 
+         this.searchResults = new SearchResults(this);
+@@ -134,6 +137,8 @@
+         this.connect('destroy', () => this._onDestroy());
+         this.searchEntry.connectObject('search-changed', this._onSearchEntryChanged.bind(this), this);
+         this.searchEntry.connectObject('entry-key-press', this._onSearchEntryKeyPress.bind(this), this);
++        // Recarrega os aplicativos quando as permissões do controle parental mudam
++        this._parentalControlsManager.connectObject('app-filter-changed', () => this.reloadApplications(), this);
+     }
+ 
+     _connectAppChangedEvents() {
+@@ -350,7 +355,8 @@
+                     app = new Shell.App({app_info: entry.get_app_info()});
+ 
+                 const appInfo = app.get_app_info();
+-                if (!appInfo.should_show())
++                // Pula aplicativos bloqueados pelo controle parental
++                if (!appInfo.should_show() || !this._parentalControlsManager.shouldShowApp(appInfo))
+                     continue;
+ 
+                 let item = this.applicationsMap.get(app);
+@@ -1121,6 +1127,9 @@
+     }
+ 
+     _onDestroy() {
++        // Limpa o gerenciador de controle parental
++        this._parentalControlsManager?.disconnectObject(this);
++        this._parentalControlsManager = null;
+         ArcMenuManager.settings.disconnectObject(this);
+         this._disconnectReloadApps();
+ 
+--- gnome-shell-extension-arc-menu.orig/menulayouts/pop.js	2026-03-20 10:04:38.851848557 -0400
++++ gnome-shell-extension-arc-menu/menulayouts/pop.js	2026-03-20 10:05:20.134838387 -0400
+@@ -159,8 +159,8 @@
+ 
+         this._folderSettings = new Gio.Settings({schema_id: 'org.gnome.desktop.app-folders'});
+         this._folderSettings.connectObject('changed::folder-children', () => Main.queueDeferredWork(this._redisplayWorkId), this);
+-        this._parentalControlsManager = ParentalControlsManager.getDefault();
+-        this._parentalControlsManager.connectObject('app-filter-changed', () => Main.queueDeferredWork(this._redisplayWorkId), this);
++        this._folderSettings.connectObject('changed::folder-children', () => Main.queueDeferredWork(this._redisplayWorkId), this);
++        // Lógica redundante de controle parental agora tratada pela BaseMenuLayout
+         Shell.AppSystem.get_default().connectObject('installed-changed', () => Main.queueDeferredWork(this._redisplayWorkId), this);
+ 
+         this.updateWidth();
+@@ -176,6 +176,9 @@
+     }
+ 
+     reloadApplications() {
++        // Enfileira a reexibição para o layout Pop
++        if (this._redisplayWorkId)
++            Main.queueDeferredWork(this._redisplayWorkId);
+     }
+ 
+     _redisplay() {
+--- gnome-shell-extension-arc-menu.orig/search.js	2026-03-20 10:04:38.843848784 -0400
++++ gnome-shell-extension-arc-menu/search.js	2026-03-20 10:05:06.515138014 -0400
+@@ -13,6 +13,7 @@
+ 
+ import {Highlighter} from 'resource:///org/gnome/shell/misc/util.js';
+ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
++import * as ParentalControlsManager from 'resource:///org/gnome/shell/misc/parentalControlsManager.js';
+ import * as RemoteSearch from 'resource:///org/gnome/shell/ui/remoteSearch.js';
+ 
+ import {ApplicationMenuItem, BaseMenuItem} from './menuWidgets.js';
+@@ -430,6 +431,8 @@
+             x_align: Clutter.ActorAlign.FILL,
+         });
+         this._menuLayout = menuLayout;
++        // Gerenciador global de controle parental
++        this._parentalControlsManager = ParentalControlsManager.getDefault();
+ 
+         const {searchProviderDisplayId} = menuLayout.menuButton;
+         this._displayId = `display_${searchProviderDisplayId}`;
+@@ -750,6 +753,14 @@
+     _updateResults(provider, results) {
+         const terms = this._terms;
+         const display = provider[this._displayId];
++        // Filtra aplicativos bloqueados pelo controle parental
++        if (display instanceof AppSearchResults) {
++            const appSystem = Shell.AppSystem.get_default();
++            results = results.filter(id => {
++                const app = appSystem.lookup_app(id);
++                return !app || this._parentalControlsManager.shouldShowApp(app.get_app_info());
++            });
++        }
+         display.updateSearch(results, terms, () => {
+             provider.searchInProgress = false;
+ 
